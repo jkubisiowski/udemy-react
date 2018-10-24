@@ -94,6 +94,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi</h1>
+        <p className="lolek">Css module test</p>
         <p className={classes.join(" ")}>It's really working</p>
         <button style={style} onClick={this.togglePersonHandler}>
           Toggle check
