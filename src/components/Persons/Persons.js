@@ -1,7 +1,7 @@
 import React from "react";
 import Person from "./Person/Person"
 
-const persons = (props) => props.persons.map((person, index) => {
+const Persons = (props) => props.persons.map((person, index) => {
     return (
       <Person
         name={person.name}
@@ -13,7 +13,7 @@ const persons = (props) => props.persons.map((person, index) => {
     );
   })
 
-  export default persons;
+  export default Persons;
   
 
 

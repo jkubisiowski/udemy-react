@@ -1,6 +1,6 @@
 import React from "react";
 
-const person = props => {
+const Person = props => {
   return (
     <div className="Person">
       <p onClick={props.clicked}>I'm a {props.name}</p>
@@ -10,4 +10,4 @@ const person = props => {
   );
 };
 
-export default person;
+export default Person;
