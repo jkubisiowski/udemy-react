@@ -4,10 +4,9 @@ import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
-
   constructor(props) {
     super(props);
-    console.log('App.js constructor');    
+    console.log("App.js constructor");
     this.state = {
       persons: [
         {
@@ -29,8 +28,6 @@ class App extends Component {
       showPersons: true
     };
   }
-
-  
 
   nameChangedHandler = (event, key) => {
     let personIndex = this.state.persons.findIndex(x => x.id === key);
@@ -61,7 +58,17 @@ class App extends Component {
     });
   };
 
+  componentWillMount() {
+    console.log('App.js component will mount');    
+  }
+
+  componentDidMount() {
+    console.log('App.js component did mount');    
+  }
+
   render() {
+    console.log("App.js render");
+
     const style = {
       backgroundColor: "greenyellow",
       font: "inherit",
@@ -85,6 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         <Cockpit
+          title={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked={this.togglePersonHandler}

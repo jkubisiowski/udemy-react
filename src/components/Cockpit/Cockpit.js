@@ -4,9 +4,11 @@ import classes from "./Cockpit.module.css"
 const Cockpit = (props) => {
     const assignedClasses = [];
 
-    let btnClass = '';
+    let btnClass = [classes.btn];
     if(props.showPersons) {
-        btnClass = classes.red;
+        btnClass.push(classes.btnRed);
+    } else {
+        btnClass.push(classes.btnGreen);
     }
 
     if (props.persons.length <= 2) {
@@ -18,9 +20,9 @@ const Cockpit = (props) => {
 
   return (
     <div className={classes.Cockpit}>
-      <h1>Hi</h1>
+      <h1>{props.title}</h1>
       <p className={assignedClasses.join(" ")}>It's really working</p>
-      <button className={btnClass} onClick={props.clicked}>
+      <button className={btnClass.join(" ")} onClick={props.clicked}>
         Toggle check
       </button>
     </div>
